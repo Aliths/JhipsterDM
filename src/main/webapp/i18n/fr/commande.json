@@ -1,0 +1,26 @@
+{
+  "myblogApp": {
+    "commande": {
+      "home": {
+        "title": "Commandes",
+        "createLabel": "Créer un nouveau Commande",
+        "createOrEditLabel": "Créer ou éditer un Commande",
+        "notFound": "Aucun Commande trouvé"
+      },
+      "created": "Un nouveau Commande a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Commande avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Commande avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Commande {{ id }} ?"
+      },
+      "detail": {
+        "title": "Commande"
+      },
+      "echeance": "Echeance",
+      "user": "User",
+      "restaurant": "Restaurant",
+      "panier": "Panier",
+      "paiement": "Paiement"
+    }
+  }
+}

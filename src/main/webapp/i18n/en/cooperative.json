@@ -1,0 +1,24 @@
+{
+  "myblogApp": {
+    "cooperative": {
+      "home": {
+        "title": "Cooperatives",
+        "createLabel": "Create a new Cooperative",
+        "createOrEditLabel": "Create or edit a Cooperative",
+        "notFound": "No Cooperatives found"
+      },
+      "created": "A new Cooperative is created with identifier {{ param }}",
+      "updated": "A Cooperative is updated with identifier {{ param }}",
+      "deleted": "A Cooperative is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cooperative {{ id }}?"
+      },
+      "detail": {
+        "title": "Cooperative"
+      },
+      "nom": "Nom",
+      "user": "User",
+      "restaurant": "Restaurant"
+    }
+  }
+}

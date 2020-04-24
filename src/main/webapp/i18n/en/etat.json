@@ -1,0 +1,10 @@
+{
+  "myblogApp": {
+    "Etat": {
+      "null": "",
+      "VALIDE": "VALIDE",
+      "ENCOURS": "ENCOURS",
+      "ANNULE": "ANNULE"
+    }
+  }
+}

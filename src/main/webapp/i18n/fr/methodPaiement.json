@@ -1,0 +1,11 @@
+{
+  "myblogApp": {
+    "MethodPaiement": {
+      "null": "",
+      "CB": "CB",
+      "BITCOIN": "BITCOIN",
+      "PAYPAL": "PAYPAL",
+      "IZLY": "IZLY"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="commande">
+            <h2><span jhiTranslate="myblogApp.commande.detail.title">Commande</span> {{ commande.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="myblogApp.commande.echeance">Echeance</span></dt>
+                <dd>
+                    <span>{{ commande.echeance }}</span>
+                </dd>
+                <dt><span jhiTranslate="myblogApp.commande.user">User</span></dt>
+                <dd>
+                    {{ commande.userId }}
+                </dd>
+                <dt><span jhiTranslate="myblogApp.commande.restaurant">Restaurant</span></dt>
+                <dd>
+                    <div *ngIf="commande.restaurantId">
+                        <a [routerLink]="['/restaurant', commande.restaurantId, 'view']">{{ commande.restaurantId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="myblogApp.commande.panier">Panier</span></dt>
+                <dd>
+                    <div *ngIf="commande.panierId">
+                        <a [routerLink]="['/panier', commande.panierId, 'view']">{{ commande.panierId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="myblogApp.commande.paiement">Paiement</span></dt>
+                <dd>
+                    <div *ngIf="commande.paiementId">
+                        <a [routerLink]="['/paiement', commande.paiementId, 'view']">{{ commande.paiementId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/commande', commande.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

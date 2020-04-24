@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-panier-heading" jhiTranslate="myblogApp.panier.home.createOrEditLabel">Create or edit a Panier</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="myblogApp.panier.etat" for="field_etat">Etat</label>
+                    <select class="form-control" name="etat" formControlName="etat" id="field_etat">
+                        <option value="VALIDE">{{ 'myblogApp.Etat.VALIDE' | translate }}</option>
+                        <option value="ENCOURS">{{ 'myblogApp.Etat.ENCOURS' | translate }}</option>
+                        <option value="ANNULE">{{ 'myblogApp.Etat.ANNULE' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('etat')!.invalid && (editForm.get('etat')!.dirty || editForm.get('etat')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('etat')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="myblogApp.panier.produit" for="field_produits">Produit</label>
+                    <select class="form-control" id="field_produits" multiple name="produits" formControlName="produits">
+                        <option [ngValue]="getSelected(editForm.get('produits')!.value, produitOption)" *ngFor="let produitOption of produits; trackBy: trackById">{{ produitOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

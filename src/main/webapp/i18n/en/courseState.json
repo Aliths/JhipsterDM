@@ -1,0 +1,10 @@
+{
+  "myblogApp": {
+    "CourseState": {
+      "null": "",
+      "COMPLETED": "COMPLETED",
+      "PENDING": "PENDING",
+      "CANCELLED": "CANCELLED"
+    }
+  }
+}

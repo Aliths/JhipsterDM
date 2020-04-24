@@ -1,0 +1,23 @@
+{
+  "myblogApp": {
+    "panier": {
+      "home": {
+        "title": "Paniers",
+        "createLabel": "Créer un nouveau Panier",
+        "createOrEditLabel": "Créer ou éditer un Panier",
+        "notFound": "Aucun Panier trouvé"
+      },
+      "created": "Un nouveau Panier a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Panier avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Panier avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Panier {{ id }} ?"
+      },
+      "detail": {
+        "title": "Panier"
+      },
+      "etat": "Etat",
+      "produit": "Produit"
+    }
+  }
+}

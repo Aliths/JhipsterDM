@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="panier">
+            <h2><span jhiTranslate="myblogApp.panier.detail.title">Panier</span> {{ panier.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="myblogApp.panier.etat">Etat</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'myblogApp.Etat.' + panier.etat }}">{{ panier.etat }}</span>
+                </dd>
+                <dt><span jhiTranslate="myblogApp.panier.produit">Produit</span></dt>
+                <dd>
+                    <span *ngFor="let produit of panier.produits; let last = last">
+                        <a [routerLink]="['/produit', produit?.id, 'view']">{{ produit.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/panier', panier.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
